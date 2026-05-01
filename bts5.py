@@ -594,7 +594,8 @@ def create_combined_map(df_route, df_static, param_route, param_static):
     if has_route_data:
         for op in [op for op in OPERATORS if op in df_route_map.columns]:
             # Convert to numeric where possible
-            df_route_map[op] = pd.to_numeric(df_route_map[op], errors='ignore')
+            df_route_map[op] = pd.to_numeric(df_route_map[op], errors='coerce')
+            df_route_map = df_route_map.dropna(subset=[op])
             
             # Filter data with non-null values
             op_data = df_route_map.copy()
@@ -861,7 +862,9 @@ def process_data(df):
     
     # Month filter
     bulan_unik = ['Semua'] + sorted(df['Bulan'].unique().tolist())
-    bulan_terpilih = st.selectbox("Pilih Bulan:", bulan_unik, index=0, key="process_data_month_select_primary")
+    #bulan_terpilih = st.selectbox("Pilih Bulan:", bulan_unik, index=0, key="process_data_month_select_primary")
+    # Ganti nama key agar unik, misalnya dengan menambah akhiran '_new' atau sesuai fungsinya
+    bulan_terpilih = st.selectbox("Pilih Bulan:", bulan_unik, index=0, key="process_data_month_select_unique")
     
     if bulan_terpilih == 'Semua':
         df_filtered = df.copy()

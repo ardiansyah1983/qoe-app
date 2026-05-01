@@ -1,0 +1,21 @@
+Cara Pengisian Data Spreadsheet Pada Aplikasi Visualisasi Hasi QoE di Kab/Kota
+
+- Melakukan Pengisian Data lengkap pada kolom yang sudah ada
+- Format Penginputan Tanggal (mm/dd/yy)
+- Pengisian Koordinat menggunakan pemisah . (titik)
+- Ketika Data di input pada file Spreadsheet, beberapa saat data akan terupdate
+
+Ketika link APlikasi dijalankan maka akan tampil Halaman Konfigurasi dan Muat Data,
+selanjutnya klik Tombol Muat Data, maka ototmatis data akan terbuka.
+
+Untuk melihat hasil Lakukan filter pada tombol :
+- Parameter Route Test
+- Parameter Static Test
+- Pilih Bulan
+- Pilih Kabupaten/Kota, dan
+- Pilih Lokasi
+- Data Koordinat bisa dilakukan melalui Peta yang ditampilkan
+
+https://qoe-app-kendari.streamlit.app/
+
+Silahkan copy link aplikasi diatas lalu jalankan di browser.
